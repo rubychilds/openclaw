@@ -111,6 +111,7 @@ COPY --from=build --chown=node:node /app/openclaw.mjs .
 COPY --from=build --chown=node:node /app/extensions ./extensions
 COPY --from=build --chown=node:node /app/skills ./skills
 COPY --from=build --chown=node:node /app/docs ./docs
+COPY --chown=node:node railway-entrypoint.sh /app/railway-entrypoint.sh
 
 # Install additional system packages needed by your skills or extensions.
 # Example: docker build --build-arg OPENCLAW_DOCKER_APT_PACKAGES="python3 wget" .
